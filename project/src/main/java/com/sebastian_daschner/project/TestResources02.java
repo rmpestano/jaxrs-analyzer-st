@@ -28,6 +28,9 @@ import java.util.logging.Logger;
 
 /**
  * These sources are solely used for test purposes and not meant for deployment.
+ *
+ * @response 401 Not authorized (class level tag applies to all resource methods)
+ * @response 403 Not authenticated (class level tag applies to all resource methods)
  */
 @Path("/test02")
 @Stateless
@@ -42,6 +45,8 @@ public class TestResources02 {
      * Returns the model result.
      *
      * @param id The path param
+     *
+     * @response 400 business logic exception
      */
     @GET
     @Path("{id}")
@@ -51,6 +56,11 @@ public class TestResources02 {
         }
     }
 
+    /**
+     * @param id resource identifier
+     * @response 400 business logic exception
+     * @response 404 This response will be ignored because it is already added via byte code analysis
+     */
     @DELETE
     @Path("{id}")
     public Response deleteId(@PathParam("id") final Map<String, List<String>> id) {

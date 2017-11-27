@@ -256,6 +256,21 @@
                         "schema": {
                             "$ref": "#/definitions/TestResources02$ModelResult"
                         }
+                    },
+                    "400": {
+                        "description": "business logic exception",
+                        "headers": {
+                        }
+                    },
+                    "401": {
+                        "description": "Not authorized (class level tag applies to all resource methods)",
+                        "headers": {
+                        }
+                    },
+                    "403": {
+                        "description": "Not authenticated (class level tag applies to all resource methods)",
+                        "headers": {
+                        }
                     }
                 }
             },
@@ -292,6 +307,16 @@
                         "description": "Internal Server Error",
                         "headers": {
                         }
+                    },
+                    "401": {
+                        "description": "Not authorized (class level tag applies to all resource methods)",
+                        "headers": {
+                        }
+                    },
+                    "403": {
+                        "description": "Not authenticated (class level tag applies to all resource methods)",
+                        "headers": {
+                        }
                     }
                 }
             }
@@ -321,6 +346,16 @@
                 "responses": {
                     "204": {
                         "description": "No Content",
+                        "headers": {
+                        }
+                    },
+                    "401": {
+                        "description": "Not authorized (class level tag applies to all resource methods)",
+                        "headers": {
+                        }
+                    },
+                    "403": {
+                        "description": "Not authenticated (class level tag applies to all resource methods)",
                         "headers": {
                         }
                     }
